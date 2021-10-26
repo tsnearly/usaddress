@@ -6,10 +6,10 @@ image: Visual Studio 2019 Preview
 
 environment:
   matrix:
-    - python: 35
-    - python: 35-x64
-    - python: 36
-    - python: 36-x64
+    - python: 3.5
+    - python: 3.5-x64
+    - python: 3.6
+    - python: 3.6-x64
 
 
 install:
