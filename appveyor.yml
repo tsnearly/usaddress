@@ -2,6 +2,7 @@
 # Based on https://raw.githubusercontent.com/choderalab/itctools/master/appveyor.yml
 
 version: 1.0.{build}
+image: macOS
 
 environment:
   matrix:
@@ -9,7 +10,7 @@ environment:
     - python: 3.6
 
 install:
-  - source ~/venv$python/bin/activate
+  - cmd: source ${HOME}/venv${python}/bin/activate
   - pip install -r requirements.txt
   - pip install -e .
   - parserator train training/labeled.xml usaddress
