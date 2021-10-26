@@ -13,8 +13,8 @@ install:
   - echo "source ${HOME}/venv${python}/bin/activate"
   - sh: source ${HOME}/venv${python}/bin/activate
   - sh: python3 -m pip install --upgrade pip  
-  - sh: python3 pip install -r requirements.txt
-  - sh: python3 pip install -e .
+  - sh: python3 -m pip install -r requirements.txt
+  - sh: python3 -m pip install -e .
   - cmd: parserator train training/labeled.xml usaddress
  
 build: false
