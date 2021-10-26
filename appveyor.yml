@@ -15,7 +15,7 @@ install:
   - sh: python3 -m pip install --upgrade pip  
   - sh: python3 -m pip install -r requirements.txt
   - sh: python3 -m pip install -e .
-  - cmd: parserator train training/labeled.xml usaddress
+  - parserator train training/labeled.xml usaddress
  
 build: false
  
