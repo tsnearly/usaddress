@@ -6,8 +6,11 @@ image: Visual Studio 2019 Preview
 
 environment:
   matrix:
-    - python: 27-x64
+    - python: 35
     - python: 35-x64
+    - python: 36
+    - python: 36-x64
+
 
 install:
   - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
@@ -15,6 +18,7 @@ install:
   - python -m pip install --upgrade pip  
   - pip install -r requirements.txt
   - pip install -e .
+  - parserator train training/labeled.xml usaddress
  
 build: false
  
@@ -27,4 +31,3 @@ on_success:
   # Could run coveralls here but will leave that to travis tests
   - echo Build succesful!
   - coverage report
-  - parserator train training/labeled.xml usaddress
