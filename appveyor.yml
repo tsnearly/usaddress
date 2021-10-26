@@ -2,20 +2,14 @@
 # Based on https://raw.githubusercontent.com/choderalab/itctools/master/appveyor.yml
 
 version: 1.0.{build}
-image: Visual Studio 2019 Preview
 
 environment:
   matrix:
     - python: 3.5
-    - python: 3.5-x64
     - python: 3.6
-    - python: 3.6-x64
-
 
 install:
-  - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
-  - echo "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64 > "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\amd64/vcvars64.bat"
-  - python -m pip install --upgrade pip  
+  - source ~/venv$python/bin/activate
   - pip install -r requirements.txt
   - pip install -e .
   - parserator train training/labeled.xml usaddress
